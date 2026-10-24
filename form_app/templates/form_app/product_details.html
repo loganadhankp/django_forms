@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+</head>
+<body>
+    <main>
+        <h1>{{ product.name }}</h1>
+        <p>{{ product.description|default:"No description provided." }}</p>
+        <p>Price: {{ product.price }}</p>
+        <p>
+            Availability:
+            {% if product.is_available %}Available{% else %}Unavailable{% endif %}
+        </p>
+        <p>Added: {{ product.created_at }}</p>
+        <p>
+            <a href="{% url 'create_product' %}">Create Product</a> |
+            <a href="{% url 'product_search' %}">Search Products</a>
+        </p>
+    </main>
+</body>
+</html>

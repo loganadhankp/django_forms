@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Product</title>
+</head>
+<body>
+    <h1>Create Product</h1>
+    <form method="post">
+        {% csrf_token %} <!-- CSRF token is included for security against cross-site request forgery attacks -->
+        {{ form.as_p }}
+        <button type="submit">Save Product</button>
+    </form>
+    <p><a href="{% url 'product_search' %}">Search Products</a></p>
+</body>
+</html>
